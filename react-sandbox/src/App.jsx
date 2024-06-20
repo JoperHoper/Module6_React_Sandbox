@@ -1,14 +1,14 @@
 import { useState } from "react";
 import "./App.css";
+import { greeting } from "./components/Greeting";
 
-// COMPONENT FUNCTION NAME -> INITIALISE
 const App = () => {
   // STATES & VARIABLES
   
   //RETURN
   return (
     <>
-      <div className="our-first-container">Test</div>   
+      <greeting name={"Josephine"}/>
     </>
   );
 };
