@@ -2,7 +2,7 @@ export const HoClabel = ({label, children }) => {
 
     return (
         <div>
-            <p>{label}</p>
+            {label}
             {children}
         </div>
     )

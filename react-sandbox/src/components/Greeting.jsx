@@ -1,29 +1,23 @@
-export const greeting = ({name}) => {
-    
-    var welcomeString = "Hello World"
+export const Greeting = ({ name }) => {
 
-    if(name){
-        welcomeString.slice(0,9)
-    }
+    var welcomeString = `${name ? name : "Hellow"}World`
 
-    return(
+    return (
         <div>
             <h1>{welcomeString}</h1>
         </div>
     );
 };
 
-// export const greetingHoC = ({name}) => {
-    
-//     var welcomeString = "Hello World"
-
-//     if(name){
-//         welcomeString.slice(0,9)
-//     }
-
-//     return(
-//         <div>
-//             <h1>{welcomeString}</h1>
-//         </div>
-//     );
-// };
+export const GreetingsHoC = ({ name, children }) => {
+    // STATE AND VAR
+    var welcomeString = `${name},`;
+    // FUNCTIONS
+    // RETURN
+    return (
+        <div>
+            <h1>{welcomeString}</h1>
+            {children}
+        </div>
+    );
+};
