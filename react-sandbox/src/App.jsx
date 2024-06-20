@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import { greeting } from "./components/Greeting";
+import { Greeting, GreetingsHoC } from "./components/Greeting";
 
 const App = () => {
   // STATES & VARIABLES
@@ -8,7 +8,9 @@ const App = () => {
   //RETURN
   return (
     <>
-      <greeting name={"Josephine"}/>
+      <GreetingsHoC name={"Alvin"}>
+        <p>I want to welcome you to the website</p>
+      </GreetingsHoC>
     </>
   );
 };
