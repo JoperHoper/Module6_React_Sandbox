@@ -3,28 +3,50 @@ import "./App.css";
 import { Greeting, GreetingsHoC } from "./components/Greeting";
 import { LabOne } from "./containers/LabOne";
 import { LabTwo } from "./containers/LabTwo";
+import { LabThree } from "./containers/LabThree";
 
 const App = () => {
   // STATES & VARIABLES
   const [contentName, setContentName] = useState("")
-  const contentDictionary = {
-    labOne: "Lab 1",
-    labTwo: "Lab 2",
-  }
+  // const contentDictionary = {
+  //   labOne: "Lab 1",
+  //   labTwo: "Lab 2",
+  // }
+
+  const contentConfig = [
+    { lab: "Lab 1" },
+    { lab: "Lab 2" },
+    { lab: "Lab 3" },
+  ];
 
   // FUNCTIONS
   const displayHandler = () => {
     switch (contentName) {
-      case contentDictionary.labOne:
+      case contentConfig[0].lab:
         return <LabOne />
-
-      case contentDictionary.labTwo:
+      case contentConfig[1].lab:
         return <LabTwo />
-
+      case contentConfig[2].lab:
+        return <LabThree />
       default:
         return <div>nothing to display</div>
     }
   }
+
+  const buttonConstructor = () => {
+    const buttonElementArray = contentConfig.map((content) => {
+      return (
+        <button
+          key={content.lab}
+          onClick={() => setContentName(content.lab)}
+          style={{ margin: "5px" }}
+        >
+          {content.lab}
+        </button>
+      );
+    });
+    return buttonElementArray;
+  };
 
   //RETURN
   return (
@@ -32,8 +54,7 @@ const App = () => {
       <p>This is the welcome page that will display the buttons for each lab</p>
 
       <div style={{ display: "flex", justifyContent: "space-evenly" }}>
-        <button onClick={() => setContentName(contentDictionary.labOne)}>Lab 1</button>
-        <button onClick={() => setContentName(contentDictionary.labTwo)}>Lab 2</button>
+        {buttonConstructor()}
       </div>
 
       <div style={{ display: "flex", width: "90vw", border: "1px solid red" }}>
