@@ -4,6 +4,7 @@ import { Greeting, GreetingsHoC } from "./components/Greeting";
 import { LabOne } from "./containers/LabOne";
 import { LabTwo } from "./containers/LabTwo";
 import { LabThree } from "./containers/LabThree";
+import { LabFour } from "./containers/LabFour";
 
 const App = () => {
   // STATES & VARIABLES
@@ -17,6 +18,7 @@ const App = () => {
     { lab: "Lab 1" },
     { lab: "Lab 2" },
     { lab: "Lab 3" },
+    { lab: "Lab 4" },
   ];
 
   // FUNCTIONS
@@ -28,8 +30,10 @@ const App = () => {
         return <LabTwo />
       case contentConfig[2].lab:
         return <LabThree />
+      case contentConfig[3].lab:
+        return <LabFour />
       default:
-        return <div>nothing to display</div>
+        return <div>Click on a lab button to see content</div>
     }
   }
 
