@@ -1,7 +1,7 @@
-import { BigCats,SingleCat } from "../components/BigCats"
+import { BigCats } from "../components/BigCats"
 
 export const LabTwo = () => {
-    return(
+    return (
         <BigCats></BigCats>
     )
 }
