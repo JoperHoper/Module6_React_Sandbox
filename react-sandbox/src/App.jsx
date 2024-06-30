@@ -5,6 +5,7 @@ import { LabOne } from "./containers/LabOne";
 import { LabTwo } from "./containers/LabTwo";
 import { LabThree } from "./containers/LabThree";
 import { LabFour } from "./containers/LabFour";
+import { LabFive } from "./containers/LabFive";
 
 const App = () => {
   // STATES & VARIABLES
@@ -19,6 +20,7 @@ const App = () => {
     { lab: "Lab 2" },
     { lab: "Lab 3" },
     { lab: "Lab 4" },
+    { lab: "Lab 5" },
   ];
 
   // FUNCTIONS
@@ -32,6 +34,8 @@ const App = () => {
         return <LabThree />
       case contentConfig[3].lab:
         return <LabFour />
+      case contentConfig[4].lab:
+        return <LabFive />
       default:
         return <div>Click on a lab button to see content</div>
     }

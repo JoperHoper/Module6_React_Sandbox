@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { SingleCat } from './SingleCats'
+import { AddCatForm } from './AddCatForm';
 
 const BigCats = () => {
     const [catsData, setCatsData] = useState([
@@ -60,8 +61,17 @@ const BigCats = () => {
     }
 
     const catListHandler = () => {
-        return catsData.map((cat) => <SingleCat catData={cat} />)
+        return catsData.map((cat) => <SingleCat handleCatDelete={handleCatDelete} catData={cat} catIndex={catsData.indexOf(cat)} />)
     };
+
+    const handleCatListChange = (catObj) => {
+        setCatsData([...catsData, catObj])
+    }
+
+    const handleCatDelete = (catIndex) => {
+        catsData.splice(catIndex, 1)
+        setCatsData([...catsData])
+    }
 
     return (
         <div>
@@ -69,6 +79,7 @@ const BigCats = () => {
             <button onClick={() => sortingCats("desc")} style={{ border: "1px black solid", padding: "5px 20px", margin: "0px 5px" }}>Decending</button>
             <button onClick={() => filteredAnimal()} style={{ border: "1px black solid", padding: "5px 20px", margin: "0px 5px" }}>Filter</button>
             <button onClick={() => displayAll()} style={{ border: "1px black solid", padding: "5px 20px", margin: "0px 5px" }}>Reset</button>
+            <AddCatForm handleCatListChange={handleCatListChange} />
             <ul>{catListHandler()}</ul>
         </div>
     )
