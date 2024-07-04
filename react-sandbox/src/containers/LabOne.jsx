@@ -9,33 +9,33 @@ export const LabOne = () => {
     return (
         <div style={{ margin: "5px", width: "100%" }}>
 
-            <labelAndContent labelText={"Lab 1a & b"}>
+            <LabelAndContent labelText={"Lab 1a & b"}>
                 <div style={labQuestioncontainerStyle}>
-                    <GreetingsHoC name={"Josephine"}/>
+                    <GreetingsHoC name={"Josephine"} />
                 </div>
-            </labelAndContent>
+            </LabelAndContent>
 
-            <labelAndContent labelText={"Lab 1c"}>
+            <LabelAndContent labelText={"Lab 1c"}>
                 <div style={labQuestioncontainerStyle}>
-                    <GreetingsHoC name={"Josephine"}/>
+                    <GreetingsHoC name={"Josephine"} />
                     <p>I want to welcome you to my website</p>
                 </div>
-            </labelAndContent>
+            </LabelAndContent>
         </div>
     );
 };
 
-const labelAndContent = ({labelText, children}) => {
+const LabelAndContent = ({ labelText, children }) => {
     const labelStyle = {
         textAlign: "left",
     }
 
     return (
         <>
-        <h6 style={labelStyle}>{labelText}</h6>
-        {children}
+            <h6 style={labelStyle}>{labelText}</h6>
+            {children}
         </>
     )
 }
 
-export {}
+export { }
