@@ -6,6 +6,7 @@ import { LabTwo } from "./containers/LabTwo";
 import { LabThree } from "./containers/LabThree";
 import { LabFour } from "./containers/LabFour";
 import { LabFive } from "./containers/LabFive";
+import { LabSix } from "./containers/LabSix";
 
 const App = () => {
   // STATES & VARIABLES
@@ -21,6 +22,7 @@ const App = () => {
     { lab: "Lab 3" },
     { lab: "Lab 4" },
     { lab: "Lab 5" },
+    { lab: "Lab 6" },
   ];
 
   // FUNCTIONS
@@ -36,6 +38,8 @@ const App = () => {
         return <LabFour />
       case contentConfig[4].lab:
         return <LabFive />
+      case contentConfig[5].lab:
+        return <LabSix />
       default:
         return <div>Click on a lab button to see content</div>
     }
@@ -65,7 +69,7 @@ const App = () => {
         {buttonConstructor()}
       </div>
 
-      <div style={{ display: "flex", width: "90vw", border: "1px solid red" }}>
+      <div style={{ display: "flex", width: "70vw", border: "1px solid red" }}>
         {displayHandler()}
       </div>
       <GreetingsHoC name={"Josephine"}>
